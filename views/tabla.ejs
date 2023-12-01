@@ -1,0 +1,39 @@
+<%- include('./templates/cabecera') %>
+
+    <div class="container is-fluid">
+        <section
+            class="section is-flex is-justify-content-center is-align-content-center is-align-items-center is-flex-direction-column">
+            <h1 class="title">Tabla dinámica</h1>
+            <h2 class="subtitle mt-2">
+               Tabla dinámica para practicar con ejs
+               <table class="table">
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>edad</th>
+                    <th>especie</th>
+                   
+                  </tr>
+                </thead>
+                
+                <tbody>
+                    <% if (miArray.length > 0) { %>
+                        <% miArray.forEach(element => { %>
+                            <tr>
+                                <td><%= element.id %></td>
+                                <td ><strong style="color:rgb(164, 206, 11)"><%= element.nombre %></strong></td>
+                                <td><%= element.edad %></td>
+                                <td><%= element.especie %></td>
+                            </tr>
+                     <% }) %>
+                    <% } %> 
+                </tbody>
+              </table>
+            </h2>
+        </section>
+    </div>
+
+
+
+    <%- include('./templates/footer') %>
